@@ -1,6 +1,6 @@
 {
   "name": "rn-sliding-up-panel",
-  "version": "1.1.7",
+  "version": "1.1.9",
   "description": "Draggable sliding up panel implemented in React Native",
   "main": "SlidingUpPanel.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/octopitus/rn-sliding-up-panel.git"
+    "url": "git+https://github.com/eXist-FraGGer/rn-sliding-up-panel.git"
   },
   "keywords": [
     "react",
@@ -21,12 +21,12 @@
     "panel",
     "sliding-up-panel"
   ],
-  "author": "Luy Tran <thailuy86@gmail.com>",
+  "author": "Ivan Sorokin <existfragger@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/octopitus/rn-sliding-up-panel/issues"
+    "url": "https://github.com/eXist-FraGGer/rn-sliding-up-panel/issues"
   },
-  "homepage": "https://github.com/octopitus/rn-sliding-up-panel#readme",
+  "homepage": "https://github.com/eXist-FraGGer/rn-sliding-up-panel#readme",
   "dependencies": {
     "prop-types": "^15.6.0"
   },

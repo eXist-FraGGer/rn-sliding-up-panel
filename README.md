@@ -9,10 +9,6 @@ React Native draggable sliding up panel purly implemented in Javascript. Inspire
 
     npm install --save eXist-FraGGer/rn-sliding-up-panel
 
-or if you are using [yarn](http://yarnpkg.com)
-
-    yarn add rn-sliding-up-panel
-
 # Usage
 
 ```js
@@ -63,6 +59,7 @@ class MyComponent extends React.Component {
 |visible|boolean|Controls how panel should visible or not.
 |draggableRange|{top: number, bottom: number}|You can not drag panel out of this range. `top` default to visible height of device, `bottom` default to 0.
 |height|number|Control the height of panel. Default to height of window.
+|renderSlidingControl|Function|Custom controll for dtagging the panel.
 |onDragStart|Function|Called when panel is about to start dragging.
 |onDrag|Function|Called when panel is dragging. Fires at most once per frame.
 |onDragEnd|Function|Called when you release your fingers. Return `true` to cancel the momentum event (use this to use `transitionTo` inside the onDragEnd function).

@@ -17,19 +17,22 @@ const deprecated = (condition, message) => condition && console.warn(message);
 
 class SlidingUpPanel extends React.Component {
     static propTypes = {
-        visible       : PropTypes.bool.isRequired,
-        draggableRange: PropTypes.shape({
+        visible             : PropTypes.bool.isRequired,
+        draggableRange      : PropTypes.shape({
             top   : PropTypes.number.isRequired,
             bottom: PropTypes.number.isRequired
         }),
-        height        : PropTypes.number,
-        onDrag        : PropTypes.func,
-        onDragStart   : PropTypes.func,
-        onDragEnd     : PropTypes.func,
-        onRequestClose: PropTypes.func,
-        allowMomentum : PropTypes.bool,
-        allowDragging : PropTypes.bool,
-        showBackdrop  : PropTypes.bool
+        height              : PropTypes.number,
+        onDrag              : PropTypes.func,
+        onDragStart         : PropTypes.func,
+        onDragEnd           : PropTypes.func,
+        onRequestClose      : PropTypes.func,
+        allowMomentum       : PropTypes.bool,
+        allowDragging       : PropTypes.bool,
+        showBackdrop        : PropTypes.bool,
+        renderSlidingControl: PropTypes.func,
+        contentStyle        : PropTypes.number,
+        containerStyle      : PropTypes.number
     };
 
     static defaultProps = {
@@ -232,6 +235,14 @@ class SlidingUpPanel extends React.Component {
         );
     }
 
+    _renderSlidingControl = () => {
+        return (
+            <View style={[ styles.favoriteIcon ]}>
+                <View style={styles.swipeControl}/>
+            </View>
+        );
+    };
+
     render() {
         if (!this.props.visible) {
             return null;
@@ -259,8 +270,13 @@ class SlidingUpPanel extends React.Component {
             <View style={[ styles.container, this.props.containerStyle ]} pointerEvents='box-none'>
                 {this._renderBackdrop()}
                 <Animated.View
-                    {...this._panResponder.panHandlers}
                     style={animatedContainerStyles}>
+                    <View {...this._panResponder.panHandlers}
+                          style={{ position: 'relative' }}>
+                        {this.props.renderSlidingControl
+                            ? this.props.renderSlidingControl()
+                            : this._renderSlidingControl()}
+                    </View>
                     {this.props.children}
                 </Animated.View>
             </View>

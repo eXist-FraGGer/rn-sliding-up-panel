@@ -9,6 +9,7 @@ declare module 'rn-sliding-up-panel' {
             bottom: number
         },
         height?: number,
+        renderSlidingControl?: Function,
         onDrag?: Function,
         onDragStart?: Function,
         onDragEnd?: Function,
@@ -16,6 +17,7 @@ declare module 'rn-sliding-up-panel' {
         allowMomentum?: boolean,
         allowDragging?: boolean,
         showBackdrop?: boolean,
+        contentStyle?: ViewStyle,
         containerStyle?: ViewStyle
     }
 

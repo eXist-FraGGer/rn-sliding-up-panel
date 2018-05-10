@@ -1,6 +1,6 @@
 declare module 'rn-sliding-up-panel' {
-    import * as React    from 'react';
-    import { ViewStyle } from 'react-native';
+    import * as React               from 'react';
+    import { StyleProp, ViewStyle } from 'react-native';
 
     interface SlidingUpPanelProps {
         visible?: boolean,
@@ -17,8 +17,8 @@ declare module 'rn-sliding-up-panel' {
         allowMomentum?: boolean,
         allowDragging?: boolean,
         showBackdrop?: boolean,
-        contentStyle?: ViewStyle,
-        containerStyle?: ViewStyle
+        contentStyle?: StyleProp<ViewStyle>,
+        containerStyle?: StyleProp<ViewStyle>
     }
 
     class SlidingUpPanel extends React.Component<SlidingUpPanelProps, any> {}

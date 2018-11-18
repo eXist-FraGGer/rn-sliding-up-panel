@@ -32,7 +32,9 @@ class SlidingUpPanel extends React.Component {
         showBackdrop        : PropTypes.bool,
         renderSlidingControl: PropTypes.func,
         contentStyle        : PropTypes.number,
-        containerStyle      : PropTypes.number
+        containerStyle      : PropTypes.number,
+        swipeControlColor   : PropTypes.string,
+        swipeControlHeight  : PropTypes.number
     };
 
     static defaultProps = {
@@ -236,9 +238,15 @@ class SlidingUpPanel extends React.Component {
     }
 
     _renderSlidingControl = () => {
+        const { swipeControlColor, swipeControlHeight } = this.props;
+
         return (
             <View style={[ styles.favoriteIcon ]}>
-                <View style={styles.swipeControl}/>
+                <View style={[
+                  styles.swipeControl,
+                  !!swipeControlColor && { backgroundColor: swipeControlColor },
+                  !!swipeControlHeight && { height: swipeControlHeight }
+                ]}/>
             </View>
         );
     };

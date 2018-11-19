@@ -18,7 +18,9 @@ declare module 'rn-sliding-up-panel' {
         allowDragging?: boolean,
         showBackdrop?: boolean,
         contentStyle?: StyleProp<ViewStyle>,
-        containerStyle?: StyleProp<ViewStyle>
+        containerStyle?: StyleProp<ViewStyle>,
+        swipeControlColor?: string,
+        swipeControlHeight?: number
     }
 
     class SlidingUpPanel extends React.Component<SlidingUpPanelProps, any> {}
